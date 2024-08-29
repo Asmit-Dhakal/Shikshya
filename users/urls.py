@@ -1,9 +1,14 @@
+# users/urls.py
+
 from django.urls import path
-from .views import RegisterStudent, RegisterTeacher, LoginStudent, LoginTeacher
+from .views import (
+    StudentRegisterAPIView, StudentLoginAPIView,
+    TeacherRegisterAPIView, TeacherLoginAPIView
+)
 
 urlpatterns = [
-    path('register/student/', RegisterStudent.as_view(), name='register-student'),
-    path('register/teacher/', RegisterTeacher.as_view(), name='register-teacher'),
-    path('login/student/', LoginStudent.as_view(), name='login-student'),
-    path('login/teacher/', LoginTeacher.as_view(), name='login-teacher'),
+    path('register/student/', StudentRegisterAPIView.as_view(), name='student-register'),
+    path('login/student/', StudentLoginAPIView.as_view(), name='student-login'),
+    path('register/teacher/', TeacherRegisterAPIView.as_view(), name='teacher-register'),
+    path('login/teacher/', TeacherLoginAPIView.as_view(), name='teacher-login'),
 ]

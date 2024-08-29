@@ -1,0 +1,62 @@
+Register/student
+http://127.0.0.1:8000/api/register/student/
+{
+  "email": "student3@gmail.com",
+  "password": "student3",
+  "password2": "student3",
+  "first_name": "Jane",
+  "last_name": "Smith",
+  "address": "5678 Oak Avenue",
+  "country": "CountryName",
+  "is_student": true
+}
+output- {
+    "message": "Student registered successfully"
+}
+
+login/student
+http://127.0.0.1:8000/api/login/student/
+
+{
+  "email": "student@example.com",
+  "password": "yourpassword"
+}
+output:
+{
+    "access": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI1MzcwODU5LCJpYXQiOjE3MjQ5Mzg4NTksImp0aSI6ImYyN2ExNGZmNjBjYjQ2MTE5ZDMwZDJmNjRmMjhjYTY1IiwidXNlcl9pZCI6Nn0.VgWMr_viaKTolDuhQ5Q84a0CaqSXLqZ-U1Z7UQRmQ_o",
+    "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcyNTAyNTI1OSwiaWF0IjoxNzI0OTM4ODU5LCJqdGkiOiJmZGM0ZDhhYTBkZmI0ZmY4YmQ4OWE1MzExMjQ5ZDU5NCIsInVzZXJfaWQiOjZ9.jcdwygS03PA88FyK1Cvun1IZ3GJUMBPMs1vD-pWUgSo"
+}
+// Register/teacher
+http://127.0.0.1:8000/api/register/teacher/
+{
+  "email": "teacher@gmail.com",
+  "password": "teacher",
+  "password2": "teacher",
+  "first_name": "Jane",
+  "last_name": "Smith",
+  "address": "5678 Oak Avenue",
+  "country": "CountryName",
+  "is_teacher": true
+}
+{
+  "email": "teacher3@gmail.com",
+  "password": "teacher3",
+  "password2": "teacher3",
+  "first_name": "Jane",
+  "last_name": "Smith",
+  "address": "5678 Oak Avenue",
+  "country": "CountryName"
+}
+Both condition work properly
+output
+{
+    "message": "Teacher registered successfully"
+}
+{
+  "email": "teacher@gmail.com",
+  "password": "teacher"
+}
+{
+    "access": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI1MzcxMzM0LCJpYXQiOjE3MjQ5MzkzMzQsImp0aSI6IjcxMGEzZDBmYjZmZTRhOGNiODI4MDM3MWUxMWQ0OTA3IiwidXNlcl9pZCI6OH0.KuHCW2D6sHhCpPrdVIdunLq0P1h15Pb4mxONq3JHn2k",
+    "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcyNTAyNTczNCwiaWF0IjoxNzI0OTM5MzM0LCJqdGkiOiJiODY5YmU1ZWUxZmY0MGU0ODQ4ODk4Yjg3ODUxNzQ4ZCIsInVzZXJfaWQiOjh9.sK4mYLAH2CNsp_Hq11r9zawdHdXRdWBAv-3CLXqzKPA"
+}
